@@ -1,3 +1,5 @@
+<?php include 'PHP/email.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,6 +39,9 @@
     <div id='stars2'></div>
     <div id='stars3'></div>
     <div class="d-flex" id="wrapper">
+        <!--alert messages start-->
+        <?php echo $alert; ?>
+        <!--alert messages end-->
 
         <!-- Sidebar -->
 
@@ -50,7 +55,7 @@
                             <div class="image-text text-center text-white">
                                 <div class="skew">
                                     <div class="profileInfo">
-                                        <img class="mt-4" src="images/quagmire.jpg" alt="logo">
+                                        <img class="mt-4" src="Images/quagmire.jpg" alt="logo">
                                         <h5>John Rey Galang</h5>
                                         <p class="text-secondary">Web Developer</p>
                                     </div>
@@ -312,7 +317,7 @@
                     <div class="row  row-cols-lg-2 ">
                         <div class="col mt-5 text-lg-start text-center ps-lg-5">
                             <h1 style="color: #8ee4af;">Hi, I'm John Rey</h1>
-                            <p class="text text-white"></p>
+                            <p class="text1 text-white"></p>
                             <a class="offset rounded-3 btn-1 border-0 btn-lg text-decoration-none text-white"
                                 href="#contact">Contact
                                 me</a>
@@ -1022,7 +1027,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <form action="PHP/email.php" method="post">
+                        <form method="post">
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-4">
@@ -1095,7 +1100,7 @@
         };
 
 
-        $('.text').text('<p>I develop websites</p>');
+        $('.text1').text('<p>I develop websites</p>');
 
         function myFunction(x) {
             if (x.matches) { // If media query matches
@@ -1214,6 +1219,23 @@
                 $(this).toggleClass("is-active");
             });
         });
+
+        //alert message
+        $(document).ready(function () {
+
+            setTimeout(function () {
+
+                $('.flash').addClass('hide');
+
+            }, 5000)
+
+            $('.flash .close').click(function () {
+
+                $('.flash').addClass('hide');
+
+            })
+
+        })
     </script>
 </body>
 
